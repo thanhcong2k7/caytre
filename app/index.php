@@ -8,7 +8,7 @@ $_SESSION["chat_history"]=[];
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lịch Vạn Niên CayTre - Tư vấn phong thủy & cuộc sống</title>
+    <title>Lịch Vạn Niên - Tư vấn phong thủy & cuộc sống</title>
     <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -235,7 +235,7 @@ $_SESSION["chat_history"]=[];
     <nav class="navbar navbar-expand-lg topbar">
         <div class="container">
             <a class="navbar-brand text-white fw-bold" href="#">
-                <i class="fas fa-calendar-alt me-2"></i>Lịch Vạn Niên
+                <i class="fas fa-calendar-alt me-2"></i>Lịch Vạn Niên - CayTre
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon text-white"><i class="fas fa-bars"></i></span>
@@ -318,6 +318,9 @@ $_SESSION["chat_history"]=[];
 
                         <h5 class="calendar-title mt-4">Tuổi xung</h5>
                         <p id="conflicting-ages">Đang tải...</p>
+
+                        <h5 class="calendar-title mt-4">Thông tin thêm</h5>
+                        <p id="additional">Đang tải...</p>
                     </div>
                 </div>
             </div>
@@ -351,9 +354,6 @@ $_SESSION["chat_history"]=[];
                             <p class="mb-3">Đăng nhập để sử dụng trợ lý AI</p>
                             <a href="auth.php?provider=google" class="btn btn-google btn-login mb-2">
                                 <i class="fab fa-google me-2"></i> Đăng nhập với Google
-                            </a>
-                            <a href="auth.php?provider=facebook" class="btn btn-facebook btn-login">
-                                <i class="fab fa-facebook me-2"></i> Đăng nhập với Facebook
                             </a>
                         </div>
                     <?php endif; ?>
@@ -512,6 +512,7 @@ $_SESSION["chat_history"]=[];
             //recommended_activities
             document.getElementById('viecnenlam').textContent = data.recommended_activities;
             document.getElementById('vieckhongnenlam').textContent = data.avoid_activities;
+            document.getElementById('additional').textContent = data.additional_info;
 
             // Update day quality badge
             const dayQualityBadge = document.getElementById('day-quality-badge');
