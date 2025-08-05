@@ -96,7 +96,8 @@ $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 curl_close($ch);
 */
 
-$data = json_encode(['system_instruction' => [['contents' => $systemPrompt]],'contents' => $messages]);
+$data = json_encode(['system_instruction' => ['parts' => [['text' => $systemPrompt]]],'contents' => $messages]);
+echo json_encode($data)."\n";
 
 // Gửi request
 $accessToken = $_SESSION['user']['access_token'];
