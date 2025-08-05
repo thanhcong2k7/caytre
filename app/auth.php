@@ -1,12 +1,11 @@
 <?php
 session_start();
-require_once '/app/env.php';
 
 // Xử lý logout
 if (isset($_GET['logout'])) {
     unset($_SESSION['user']);
     session_destroy();
-    header('Location: ' . BASE_URL);
+    header('Location: ' . getenv('BASE_URL'));
     exit;
 }
 
@@ -16,8 +15,8 @@ $code = $_GET['code'] ?? null;
 // Khi user CHƯA đăng nhập → điều hướng đến Google OAuth
 if ($provider === 'google' && !isset($_SESSION['user']) && !$code) {
     $authUrl = "https://accounts.google.com/o/oauth2/v2/auth?" . http_build_query([
-        'client_id' => GOOGLE_CLIENT_ID,
-        'redirect_uri' => BASE_URL . '/auth.php?provider=google',
+        'client_id' => getenv('GOOGLE_CLIENT_ID'),
+        'redirect_uri' => getenv('BASE_URL') . '/auth.php?provider=google',
         'response_type' => 'code',
         'scope' => implode(' ', [
             'openid',
@@ -37,9 +36,9 @@ if ($provider === 'google' && $code) {
     $tokenUrl = 'https://oauth2.googleapis.com/token';
     $tokenParams = [
         'code' => $code,
-        'client_id' => GOOGLE_CLIENT_ID,
-        'client_secret' => GOOGLE_CLIENT_SECRET,
-        'redirect_uri' => BASE_URL . '/auth.php?provider=google',
+        'client_id' => getenv('GOOGLE_CLIENT_ID'),
+        'client_secret' => getenv('GOOGLE_CLIENT_SECRET'),
+        'redirect_uri' => getenv('BASE_URL') . '/auth.php?provider=google',
         'grant_type' => 'authorization_code',
     ];
 
@@ -77,9 +76,9 @@ if ($provider === 'google' && $code) {
         ];
     }
 
-    header('Location: ' . BASE_URL);
+    header('Location: ' . getenv('BASE_URL'));
     exit;
 }
 
 // Nếu không có hành động rõ ràng
-header('Location: ' . BASE_URL);
+header('Location: ' . getenv('BASE_URL'));

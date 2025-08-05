@@ -2,7 +2,6 @@
 session_start();
 header('Content-Type: application/json');
 header('Access-Control-Allow-Origin: ' . ($_SERVER['HTTP_ORIGIN'] ?? '*'));
-require_once '/app/env.php';
 
 $date = $_GET['date'] ?? date('Y-m-d');
 // Validate date format and range
@@ -65,7 +64,7 @@ Cấu trúc như sau:
 Chỉ trả về JSON hợp lệ như trên. Không thêm bất kỳ mô tả, markdown, tiêu đề, hoặc văn bản nào khác.
 ";
 
-$apiKey = GOOGLE_AI_STUDIO_API;
+$apiKey = getenv('GOOGLE_AI_STUDIO_API');
 $apiUrl = 'https://generativelanguage.googleapis.com/v1beta/models/gemma-3n-e4b-it:generateContent?key=' . $apiKey;
 $ch = curl_init();
 
