@@ -97,11 +97,10 @@ curl_close($ch);
 */
 
 $data = json_encode(['system_instruction' => ['parts' => [['text' => $systemPrompt]]],'contents' => $messages]);
-echo json_encode($data)."\n";
 
 // Gửi request
 $accessToken = $_SESSION['user']['access_token'];
-$ch = curl_init("https://generativelanguage.googleapis.com/v1beta/models/gemma-3n-e4b-it:generateContent");
+$ch = curl_init("https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent");
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 curl_setopt($ch, CURLOPT_POST, value: true);
 curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
@@ -122,7 +121,7 @@ if ($httpCode !== 200) {
 
 $responseData = json_decode($response, true);
 //$reply = $responseData['choices'][0]['message']['content'] ?? 'Xin lỗi, tôi không thể trả lời câu hỏi này ngay lúc này.';
-$reply = $responseData['candidates'][0]['content']['parts'][0] ?? 'Xin lỗi, tôi không thể trả lời lúc này.';
+$reply = $responseData['candidates'][0]['content']['parts'][0]['text'] ?? 'Xin lỗi, tôi không thể trả lời lúc này.';
 
 // Lưu lịch sử chat vào session
 if (!isset($_SESSION['chat_history'])) {
