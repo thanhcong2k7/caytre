@@ -75,7 +75,6 @@ if ($provider === 'google' && $code) {
             'expires_in' => $tokenData["expires_in"] ?? null,
         ];
     }
-
     header('Location: ' . getenv('BASE_URL'));
     exit;
 }

@@ -76,10 +76,10 @@ $data = [
 
 $messages = [];
 foreach ($history as $turn) {
-    $messages[] = ['role' => 'user', 'parts' => [$turn['user']]];
-    $messages[] = ['role' => 'model', 'parts' => [$turn['bot']]];
+    $messages[] = ['role' => 'user', 'parts' => [['text' => $turn['user']]]];
+    $messages[] = ['role' => 'model', 'parts' => [['text' => $turn['bot']]]];
 }
-$messages[] = ['role' => 'user', 'parts' => [$userMessage]];
+$messages[] = ['role' => 'user', 'parts' => [['text' => $userMessage]]];
 
 /*
 $ch = curl_init($apiUrl);
