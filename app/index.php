@@ -426,7 +426,6 @@ $_SESSION["chat_history"]=[];
             // Hide all pages
             document.getElementById('home-page').classList.add('d-none');
             document.getElementById('policy-page').classList.add('d-none');
-            document.getElementById('about-page').classList.add('d-none');
 
             // Show selected page
             document.getElementById(pageId).classList.remove('d-none');
