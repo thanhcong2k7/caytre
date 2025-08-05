@@ -2,7 +2,7 @@
 session_start();
 header('Content-Type: application/json');
 header('Access-Control-Allow-Origin: ' . ($_SERVER['HTTP_ORIGIN'] ?? '*'));
-require_once '../.env.php';
+require_once '/app/env.php';
 
 $date = $_GET['date'] ?? date('Y-m-d');
 // Validate date format and range

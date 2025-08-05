@@ -2,7 +2,7 @@
 session_start();
 header('Content-Type: application/json');
 header('Access-Control-Allow-Origin: ' . ($_SERVER['HTTP_ORIGIN'] ?? '*'));
-require_once '../api/.env.php';
+require_once '/app/env.php';
 
 //Chat history
 if (!isset($_SESSION['chat_history'])) {
