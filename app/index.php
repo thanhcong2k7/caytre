@@ -398,7 +398,8 @@ $_SESSION["chat_history"]=[];
 
                     <h4 class="mt-4"><i class="fas fa-exclamation-triangle me-2 text-primary"></i>Giới Hạn Trách Nhiệm
                     </h4>
-                    <p>Thông tin trên website chỉ mang tính chất tham khảo. Chúng tôi không chịu trách nhiệm cho bất kỳ
+                    <p>Thông tin trên website được tạo ra bởi trí tuệ nhân tạo và chỉ mang tính chất tham khảo. Chúng
+                        tôi không chịu trách nhiệm cho bất kỳ
                         quyết định nào dựa trên thông tin được cung cấp bởi hệ thống.</p>
                 </div>
             </div>
