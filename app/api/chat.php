@@ -74,7 +74,7 @@ $data = [
 ];
 */
 
-$messages = [['role' => 'user', 'parts' => [$systemPrompt]]];
+$messages = [];
 foreach ($history as $turn) {
     $messages[] = ['role' => 'user', 'parts' => [$turn['user']]];
     $messages[] = ['role' => 'model', 'parts' => [$turn['bot']]];
@@ -96,7 +96,7 @@ $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 curl_close($ch);
 */
 
-$data = json_encode(['contents' => $messages]);
+$data = json_encode(['system_instruction' => [['contents' => $systemPrompt]],'contents' => $messages]);
 
 // Gửi request
 $accessToken = $_SESSION['user']['access_token'];
