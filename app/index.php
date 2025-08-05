@@ -243,11 +243,11 @@ $_SESSION["chat_history"]=[];
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link active" href="#" id="home-link"><i class="fas fa-home me-1"></i> Trang
+                        <a class="nav-link active" href="/" id="home-link"><i class="fas fa-home me-1"></i> Trang
                             chủ</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#" id="policy-link"><i class="fas fa-file-contract me-1"></i> Chính
+                        <a class="nav-link" href="/policy" id="policy-link"><i class="fas fa-file-contract me-1"></i> Chính
                             sách</a>
                     </li>
                     <?php if (isset($_SESSION['user'])): ?>
@@ -376,35 +376,6 @@ $_SESSION["chat_history"]=[];
             </div>
         </div>
     </div>
-    <div class="container mt-4 d-none" id="policy-page">
-        <div class="content-card">
-            <h2 class="mb-4 text-center"><i class="fas fa-file-contract me-2"></i>Chính Sách</h2>
-
-            <div class="policy-content">
-                <p class="lead text-center">
-                    "Website được xây dựng phục vụ mục đích cá nhân và phi lợi nhuận. Dữ liệu được cung cấp từ các nguồn
-                    công khai. Người dùng chịu trách nhiệm với nội dung họ nhập vào hệ thống."
-                </p>
-
-                <div class="mt-5">
-                    <h4><i class="fas fa-shield-alt me-2 text-primary"></i>Bảo Mật Thông Tin</h4>
-                    <p>Chúng tôi cam kết bảo vệ thông tin cá nhân của người dùng. Mọi dữ liệu cá nhân được cung cấp sẽ
-                        chỉ được sử dụng cho mục đích cải thiện trải nghiệm người dùng và không được chia sẻ với bên thứ
-                        ba.</p>
-
-                    <h4 class="mt-4"><i class="fas fa-database me-2 text-primary"></i>Thu Thập Dữ Liệu</h4>
-                    <p>Website có thể thu thập thông tin không nhận dạng cá nhân như loại trình duyệt, thiết bị truy
-                        cập, thời gian truy cập để phân tích và cải thiện dịch vụ.</p>
-
-                    <h4 class="mt-4"><i class="fas fa-exclamation-triangle me-2 text-primary"></i>Giới Hạn Trách Nhiệm
-                    </h4>
-                    <p>Thông tin trên website được tạo ra bởi trí tuệ nhân tạo và chỉ mang tính chất tham khảo. Chúng
-                        tôi không chịu trách nhiệm cho bất kỳ
-                        quyết định nào dựa trên thông tin được cung cấp bởi hệ thống.</p>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -417,16 +388,9 @@ $_SESSION["chat_history"]=[];
             setActiveLink(this);
         });
 
-        document.getElementById('policy-link').addEventListener('click', function (e) {
-            e.preventDefault();
-            showPage('policy-page');
-            setActiveLink(this);
-        });
-
         function showPage(pageId) {
             // Hide all pages
             document.getElementById('home-page').classList.add('d-none');
-            document.getElementById('policy-page').classList.add('d-none');
 
             // Show selected page
             document.getElementById(pageId).classList.remove('d-none');
