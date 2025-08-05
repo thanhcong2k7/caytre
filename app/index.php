@@ -250,9 +250,6 @@ $_SESSION["chat_history"]=[];
                         <a class="nav-link" href="#" id="policy-link"><i class="fas fa-file-contract me-1"></i> Chính
                             sách</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" id="about-link"><i class="fas fa-user me-1"></i> Về tác giả</a>
-                    </li>
                     <?php if (isset($_SESSION['user'])): ?>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
@@ -407,42 +404,6 @@ $_SESSION["chat_history"]=[];
             </div>
         </div>
     </div>
-    <div class="container mt-4 d-none" id="about-page">
-        <div class="content-card">
-            <h2 class="mb-4 text-center"><i class="fas fa-user me-2"></i>Về Tác Giả</h2>
-
-            <div class="row">
-                <div class="col-md-4 text-center">
-                    <img src="data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'%3E%3Ccircle cx='100' cy='100' r='90' fill='%233a5a40'/%3E%3Ccircle cx='100' cy='85' r='35' fill='%23f9f9f9'/%3E%3Cpath d='M100,120 Q125,150 75,150 Z' fill='%23f9f9f9'/%3E%3C/svg%3E"
-                        class="img-fluid rounded-circle mb-3" alt="Tác giả" style="max-width: 200px;">
-                </div>
-                <div class="col-md-8">
-                    <h3>{{ Tên tác giả }}</h3>
-                    <p class="text-muted"><i class="fas fa-code me-2"></i>{{ ok }}</p>
-
-                    <div class="mt-4">
-                        <h4><i class="fas fa-book-open me-2"></i>Giới Thiệu</h4>
-                        <p>{{ Mô tả bản thân, kinh nghiệm và đam mê với văn hóa truyền thống, phong thủy và công nghệ }}
-                        </p>
-
-                        <h4 class="mt-4"><i class="fas fa-graduation-cap me-2"></i>Học Vấn & Kinh Nghiệm</h4>
-                        <ul>
-                            <li>{{ Trình độ học vấn và chuyên môn }}</li>
-                            <li>{{ Kinh nghiệm làm việc trong lĩnh vực công nghệ }}</li>
-                            <li>{{ Nghiên cứu về văn hóa phương Đông và phong thủy }}</li>
-                        </ul>
-
-                        <h4 class="mt-4"><i class="fas fa-envelope me-2"></i>Liên Hệ</h4>
-                        <p>
-                            <i class="fas fa-envelope me-2"></i> {{ Email liên hệ }}<br>
-                            <i class="fab fa-facebook me-2"></i> {{ Facebook cá nhân }}<br>
-                            <i class="fab fa-github me-2"></i> {{ Tài khoản GitHub }}
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -458,12 +419,6 @@ $_SESSION["chat_history"]=[];
         document.getElementById('policy-link').addEventListener('click', function (e) {
             e.preventDefault();
             showPage('policy-page');
-            setActiveLink(this);
-        });
-
-        document.getElementById('about-link').addEventListener('click', function (e) {
-            e.preventDefault();
-            showPage('about-page');
             setActiveLink(this);
         });
 
