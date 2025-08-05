@@ -1,0 +1,7 @@
+name: caytre
+app_id: da_Ko6IotJU70Ax
+owner: thanhcong2k7
+package: '.'
+scaling:
+  mode: single_concurrency
+kind: wasmer.io/App.v0
