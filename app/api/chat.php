@@ -101,7 +101,7 @@ echo json_encode($data)."\n";
 
 // Gửi request
 $accessToken = $_SESSION['user']['access_token'];
-$ch = curl_init("https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent");
+$ch = curl_init("https://generativelanguage.googleapis.com/v1beta/models/gemma-3n-e4b-it:generateContent");
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 curl_setopt($ch, CURLOPT_POST, value: true);
 curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
